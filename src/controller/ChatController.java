@@ -46,7 +46,8 @@ public class ChatController
 	}
 	private void lotsOfResponses()
 	{
-		ArrayList<ChatModel> 
+		ArrayList<ChatModel> Chatbot = new ArrayList<ChatModel>();
+		
 	}
 	private void askUser()
 	{
