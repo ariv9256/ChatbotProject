@@ -10,22 +10,25 @@ public class ChatController
 	private ChatModel Chatbot; 
 	private Scanner inputScanner;
 	
-	public String interactWithChatbot(String userInput)
-	{
-		return null;
-	}
-	
+
 	public ChatController()
 	{
 		Chatbot = new ChatModel();
 		inputScanner = new Scanner(System.in);
 	}
+	public String interactWithChatbot(String text)
+	{
+		String output = "";
+		String userResponse = JOptionPane.showInputDialog(null, "Hey bud, what's up?");
+		output = Chatbot.processText(userResponse);
+		return output;
+	}
 	public void start()
 	{
-		String userInput = JOptionPane.showInputDialog(null, " ");
+		String userInput = "";
 		while(!userInput.equalsIgnoreCase("quit"))
 		{
-			JOptionPane.showInputDialog(null, " ");
+			userInput = interactWithChatbot(userInput);
 		}
 		askUser();
 	}
@@ -43,11 +46,6 @@ public class ChatController
 			JOptionPane.showMessageDialog(null, "You need to type in a number my spooky one :O");
 		}
 		return isValid;
-	}
-	private void lotsOfResponses()
-	{
-		ArrayList<ChatModel> Chatbot = new ArrayList<ChatModel>();
-		
 	}
 	private void askUser()
 	{

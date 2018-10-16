@@ -31,9 +31,9 @@ public class ChatModel
 		responseList.add("Hello there! How are you in this lovely evening?");
 		responseList.add("That is mean goodbye :( Leave me alone");
 		responseList.add("What is your name?");
-		responseList.add("What is your favorite holiday?");
 		responseList.add("I can't do the understanding of that statement");
 		responseList.add("What are you doing?");
+		responseList.add("What do you like to do?");
 		
 		spookyList.add("What is your favorite holiday(it should be obvious).");
 		spookyList.add("Jack Skellington is the bestest!");
@@ -41,6 +41,19 @@ public class ChatModel
 		spookyList.add("If you were to be a halloween monster, what would it be?");
 		spookyList.add("Cause this is thriller!");
 		spookyList.add("Would you like to do the trick or treat?");
+		spookyList.add("Do you carve pumpkins for spooky day?");
+		spookyList.add("What is your favorite piece of candy?");
+		spookyList.add("Do you have a halloween costsume prepared?");
+		spookyList.add("Do you believe in spooky ghosts?");
+		
+	}
+	public String processText(String userText)
+	{
+		String answer = ""; 
+		
+		answer += "You said: " + userText; 
+		
+		return answer;
 	}
 	public ArrayList<String> getResponseList()
 	{
