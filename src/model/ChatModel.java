@@ -45,6 +45,10 @@ public class ChatModel
 		spookyList.add("What is your favorite piece of candy?");
 		spookyList.add("Do you have a halloween costsume prepared?");
 		spookyList.add("Do you believe in spooky ghosts?");
+		spookyList.add("Did you know pumpkins aren't only orange? They can be white, blue, and green.");
+		spookyList.add("Do you like bats? How about vampire bats?");
+		spookyList.add("Have you ever seen a bat on Halloween? That's considered good luck.");
+		spookyList.add("Are you an adult? Do you still dress up for Halloween?");
 		
 	}
 	public String processText(String userText)
