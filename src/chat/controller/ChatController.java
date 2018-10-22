@@ -1,14 +1,16 @@
-package controller;
+package chat.controller;
 
 import java.util.Scanner;
-import model.ChatModel;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
+import chat.model.ChatModel;
 
 public class ChatController
 {
 	private ChatModel Chatbot; 
 	private Scanner inputScanner;
+	private ChatModel simpleBot;
 	
 
 	public ChatController()
@@ -31,6 +33,10 @@ public class ChatController
 			userInput = interactWithChatbot(userInput);
 		}
 		askUser();
+	}
+	public ChatModel getChatbot()
+	{
+		return simpleBot;
 	}
 	public boolean validInt(String maybeInt)
 	{
