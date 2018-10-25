@@ -51,13 +51,29 @@ public class ChatModel
 		spookyList.add("Are you an adult? Do you still dress up for Halloween?");
 		
 	}
-	public String processText(String userText)
-	{
-		String answer = ""; 
+		public String processText(String userText)
+		{
+			String answer = ""; 
 		
-		answer += "You said: " + userText; 
+			answer += "You said: " + userText; 
 		
-		return answer;
+			return answer;
+	}
+		public boolean legitimacyChecker(String input)
+		{
+			boolean isValid = true;
+		
+			if(input == null)
+			{
+				isValid = false;
+			}
+			else if(input.length() < 2)
+			{
+				isValid = false;
+			}
+		else if(input.contains("sdf") || input.contains("cvb"))
+			
+		return isValid = false;
 	}
 	public ArrayList<String> getResponseList()
 	{
