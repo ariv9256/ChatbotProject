@@ -59,7 +59,7 @@ public class ChatModel
 		
 			return answer;
 	}
-		public boolean legitimacyChecker(String input)
+		public boolean contentChecker(String input)
 		{
 			boolean isValid = true;
 		

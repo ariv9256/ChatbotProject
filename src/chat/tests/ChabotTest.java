@@ -10,7 +10,7 @@ import chat.model.Chatbot;
 
 public class ChabotTest
 {
-	private Chatbot testedBot;
+	private ChatModel testedBot;
 
 	@Before
 	public void setUp() throws Exception
