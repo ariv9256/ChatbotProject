@@ -59,6 +59,21 @@ public class ChatModel
 		
 			return answer;
 	}
+		public boolean spookyChecker(String input)
+		{
+			Boolean isSpooky = false;
+			input = getContent();
+			
+			for (String spookyPhrase : getSpookyList())
+			{
+				isSpooky = input.contains(spookyPhrase);
+				if (isSpooky = true)
+				{
+					return isSpooky;
+				}
+			}
+			return isSpooky;
+		}
 		public boolean contentChecker(String input)
 		{
 			boolean isValid = true;
