@@ -2,7 +2,7 @@ package chat.model;
 
 import java.util.ArrayList;
 
-public class ChatModel
+public class Chatbot
 {
 	private ArrayList<String> responseList = new ArrayList<String>();
 	private ArrayList<String> spookyList = new ArrayList<String>();
@@ -10,12 +10,12 @@ public class ChatModel
 	private String currentUser;
 	private String joke;
 	
-	public ChatModel()
+	public Chatbot()
 	{
 		//Default Constructor
 	}
-	public ChatModel(ArrayList<ChatModel> responseList, 
-			ArrayList<ChatModel> spookyList, String content, String currentUser, String joke)
+	public Chatbot(ArrayList<Chatbot> responseList, 
+			ArrayList<Chatbot> spookyList, String content, String currentUser, String joke)
 	{
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList<String>();
@@ -25,6 +25,16 @@ public class ChatModel
 		
 		buildTheLists();
 	
+	}
+	public Chatbot(String content)
+	{
+		this.content = "default content";
+		this.currentUser = new String("default user");
+		this.joke = new String (" ");
+		
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		buildTheLists();
 	}
 	private void buildTheLists()
 	{
@@ -74,9 +84,9 @@ public class ChatModel
 			}
 			return isSpooky;
 		}
-		public boolean contentChecker(String input)
+		public Boolean contentChecker(String input)
 		{
-			boolean isValid = true;
+			Boolean isValid = true;
 		
 			if(input == null)
 			{
@@ -87,8 +97,10 @@ public class ChatModel
 				isValid = false;
 			}
 		else if(input.contains("sdf") || input.contains("cvb"))
-			
-		return isValid = false;
+		{
+			isValid = false;
+		}
+			return isValid;
 	}
 	public ArrayList<String> getResponseList()
 	{

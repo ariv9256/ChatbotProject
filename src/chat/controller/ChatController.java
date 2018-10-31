@@ -4,18 +4,18 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-import chat.model.ChatModel;
+import chat.model.Chatbot;
 
 public class ChatController
 {
-	private ChatModel Chatbot; 
+	private Chatbot Chatbot; 
 	private Scanner inputScanner;
-	private ChatModel simpleBot;
+	private Chatbot simpleBot;
 	
 
 	public ChatController()
 	{
-		Chatbot = new ChatModel();
+		Chatbot = new Chatbot();
 		inputScanner = new Scanner(System.in);
 	}
 	public String interactWithChatbot(String text)
@@ -34,9 +34,16 @@ public class ChatController
 		}
 		askUser();
 	}
-	public ChatModel getChatbot()
+	public Chatbot getChatbot()
 	{
 		return simpleBot;
+	}
+	public String useChatbotCheckers(String content)
+	{
+		content = simpleBot.getContent();
+		simpleBot.spookyChecker(content);
+		
+		return content;
 	}
 	public boolean validInt(String maybeInt)
 	{
@@ -55,7 +62,7 @@ public class ChatController
 	}
 	private void askUser()
 	{
-		ChatModel userChat = new ChatModel();
+		Chatbot userChat = new Chatbot();
 		
 		String response = JOptionPane.showInputDialog(null, "What is your favorite holiday?");
 		
