@@ -84,6 +84,24 @@ public class Chatbot
 			}
 			return isSpooky;
 		}
+		public Boolean legitimacyChecker(String content)
+		{
+			content = getContent();
+			Boolean isLegitimate = false;
+			if(content == null || content.equals(""))
+			{
+				isLegitimate = false;
+			}
+			else if (content.equalsIgnoreCase("true"))
+			{
+				isLegitimate = false;
+			}
+			else
+			{
+				isLegitimate = false;
+			}
+			return isLegitimate;
+		}
 		public Boolean contentChecker(String input)
 		{
 			Boolean isValid = true;
