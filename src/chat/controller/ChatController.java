@@ -24,6 +24,7 @@ public class ChatController
 		String userResponse = JOptionPane.showInputDialog(null, "Hey bud, what's up?");
 		output = Chatbot.processText(userResponse);
 		return output;
+		//First output of Chatbot and allows interaction between chatbot and userResponse
 	}
 	public void start()
 	{
@@ -31,21 +32,25 @@ public class ChatController
 		while(!userInput.equalsIgnoreCase("quit"))
 		{
 			userInput = interactWithChatbot(userInput);
+			//"quit" option in Chatbot from userInput
 		}
 		askUser();
+		//made askUser() public
 	}
 	public Chatbot getChatbot()
 	{
 		return simpleBot;
+		//simpleBot variable creation in controller
 	}
 	public String useChatbotCheckers(String content)
 	{
 		content = simpleBot.getContent();
 		simpleBot.spookyChecker(content);
+		//simpleBot checks arrayList content using userChatbotCheckers String method
 		
 		return content;
 	}
-	public boolean validInt(String maybeInt)
+	public boolean validInt(String maybeInt) // Validity checker method
 	{
 		boolean isValid = false;
 		
@@ -60,11 +65,11 @@ public class ChatController
 		}
 		return isValid;
 	}
-	private void askUser()
+	private void askUser() //End result of askUser in chatbot (not finished yet)
 	{
 		Chatbot userChat = new Chatbot();
 		
-		String response = JOptionPane.showInputDialog(null, "What is your favorite holiday?");
+		//String response = JOptionPane.showInputDialog(null, "What is your favorite holiday?");
 		
 	}
 }

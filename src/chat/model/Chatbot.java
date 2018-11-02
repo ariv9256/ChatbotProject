@@ -36,7 +36,7 @@ public class Chatbot
 		this.spookyList = new ArrayList<String>();
 		buildTheLists();
 	}
-	private void buildTheLists()
+	private void buildTheLists() //Builds arrayLists for chatbot
 	{
 		responseList.add("Hello there! How are you in this lovely evening?");
 		responseList.add("That is mean goodbye :( Leave me alone");
@@ -61,19 +61,21 @@ public class Chatbot
 		spookyList.add("Are you an adult? Do you still dress up for Halloween?");
 		
 	}
-		public String processText(String userText)
+		public String processText(String userText) //Return userResponse method
 		{
 			String answer = ""; 
+			//Processes response and gives a message from input
 		
 			answer += "You said: " + userText; 
 		
 			return answer;
 	}
-		public boolean spookyChecker(String input)
+		public boolean spookyChecker(String input)//Checks spookiness 
 		{
 			Boolean isSpooky = false;
 			input = getContent();
 			
+			//Spooky for list checking contents of spookyList 
 			for (String spookyPhrase : getSpookyList())
 			{
 				isSpooky = input.contains(spookyPhrase);
@@ -84,7 +86,7 @@ public class Chatbot
 			}
 			return isSpooky;
 		}
-		public Boolean legitimacyChecker(String content)
+		public Boolean legitimacyChecker(String content) //Checks for actual input instead of keyboard bash
 		{
 			content = getContent();
 			Boolean isLegitimate = false;
