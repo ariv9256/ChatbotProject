@@ -64,10 +64,21 @@ public class Chatbot
 		public String processText(String userText) //Return userResponse method
 		{
 			String answer = ""; 
-			//Processes response and gives a message from input
-		
-			answer += "You said: " + userText; 
-		
+			
+			if(userText == null)
+			{
+				answer += "You really should not send null";
+			}
+			
+			answer += "You said: " + userText;
+			
+			if (contentChecker(userText))
+			{
+				answer += "You said the special words.\n";
+			}
+			int randomIndex = (int) (responseList.size() * Math.random());
+			answer += "Chatbot says: " + responseList.get(randomIndex);
+			
 			return answer;
 	}
 		public boolean spookyChecker(String input)//Checks spookiness 
