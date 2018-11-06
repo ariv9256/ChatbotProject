@@ -7,22 +7,21 @@ import javax.swing.JOptionPane;
 import chat.model.Chatbot;
 
 public class ChatController
-{
-	private Chatbot Chatbot; 
+{ 
 	private Scanner inputScanner;
 	private Chatbot simpleBot;
 	
 
 	public ChatController()
 	{
-		Chatbot = new Chatbot();
+		simpleBot = new Chatbot();
 		inputScanner = new Scanner(System.in);
 	}
 	public String interactWithChatbot(String text)
 	{
 		String output = "";
 		String userResponse = JOptionPane.showInputDialog(null, "Hey bud, what's up?");
-		output = Chatbot.processText(userResponse);
+		output = simpleBot.processText(userResponse);
 		return output;
 		//First output of Chatbot and allows interaction between chatbot and userResponse
 	}
@@ -67,7 +66,6 @@ public class ChatController
 	}
 	private void askUser() //End result of askUser in chatbot (not finished yet)
 	{
-		Chatbot userChat = new Chatbot();
 		
 		//String response = JOptionPane.showInputDialog(null, "What is your favorite holiday?");
 		
