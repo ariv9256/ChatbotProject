@@ -44,6 +44,16 @@ public class Chatbot
 		responseList.add("I can't do the understanding of that statement");
 		responseList.add("What are you doing?");
 		responseList.add("What do you like to do?");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
 		
 		spookyList.add("What is your favorite holiday(it should be obvious).");
 		spookyList.add("Jack Skellington is the bestest!");
