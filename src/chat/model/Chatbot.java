@@ -17,18 +17,18 @@ public class Chatbot
 	public Chatbot(ArrayList<Chatbot> responseList, 
 			ArrayList<Chatbot> spookyList, String content, String currentUser, String joke)
 	{
-		this.responseList = new ArrayList<String>();
-		this.spookyList = new ArrayList<String>();
-		this.content = new String("Default spoop :(");
-		this.currentUser = new String("Default empty spooky");
-		this.joke = "What instrument does a skeleton play?";
+		this.responseList = getResponseList();
+		this.spookyList = getSpookyList();
+		this.content = content;
+		this.currentUser = currentUser;
+		this.joke = joke;
 		
 		buildTheLists();
 	
 	}
 	public Chatbot(String content)
 	{
-		this.content = "default content";
+		this.content = content;
 		this.currentUser = new String("default user");
 		this.joke = new String (" ");
 		
