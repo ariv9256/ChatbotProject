@@ -75,22 +75,19 @@ public class Chatbot
 		{
 			String answer = ""; 
 			
-			if(userText == null)
+			if(contentChecker(content) == true)
 			{
-				answer += "You really should not send null";
+				setContent(content);
 			}
 			
-			answer += "You said: " + userText;
-			
-			if (contentChecker(userText))
-			{
-				answer += "You said the special words.\n";
-			}
-			int randomIndex = (int) (responseList.size() * Math.random());
+			getResponseList();
+			int randomIndex = 1;
+			randomIndex = (int) (Math.random() * responseList.size());
 			answer += "Chatbot says: " + responseList.get(randomIndex);
+			answer = "You said: " + content + ". /nChatbot says: " + responseList.get(randomIndex);
 			
 			return answer;
-	}
+		}
 		public boolean spookyChecker(String input)//Checks spookiness 
 		{
 			Boolean isSpooky = false;
