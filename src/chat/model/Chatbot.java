@@ -23,7 +23,7 @@ public class Chatbot
 		this.currentUser = currentUser;
 		this.joke = joke;
 		
-		buildTheLists();
+		buildLists();
 	
 	}
 	public Chatbot(String content)
@@ -34,9 +34,9 @@ public class Chatbot
 		
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList<String>();
-		buildTheLists();
+		buildLists();
 	}
-	private void buildTheLists() //Builds arrayLists for chatbot
+	private void buildLists() //Builds arrayLists for chatbot
 	{
 		responseList.add("Hello there! How are you in this lovely evening?");
 		responseList.add("That is mean goodbye :( Leave me alone");
@@ -55,6 +55,7 @@ public class Chatbot
 		responseList.add("");
 		responseList.add("");
 		
+		spookyList.add("Halloween");
 		spookyList.add("What is your favorite holiday(it should be obvious).");
 		spookyList.add("Jack Skellington is the bestest!");
 		spookyList.add("B O O");
@@ -90,15 +91,17 @@ public class Chatbot
 		}
 		public boolean spookyChecker(String input)//Checks spookiness 
 		{
-			Boolean isSpooky = false;
-			input = getContent();
+			boolean isSpooky = false;
+			//input = getContent();
+			setContent(input);
 			
 			//Spooky for list checking contents of spookyList 
 			for (String spookyPhrase : getSpookyList())
 			{
-				isSpooky = input.contains(spookyPhrase);
-				if (isSpooky = true)
+				//isSpooky = input.contains(spookyPhrase);
+				if (content.contains(spookyPhrase))
 				{
+					isSpooky = true;
 					return isSpooky;
 				}
 			}
@@ -106,13 +109,22 @@ public class Chatbot
 		}
 		public Boolean legitimacyChecker(String content) //Checks for actual input instead of keyboard bash
 		{
-			content = getContent();
-			Boolean isLegitimate = false;
+			setContent(content);
+			//content = getContent();
+			boolean isLegitimate = true;
 			if(content == null || content.equals(""))
 			{
 				isLegitimate = false;
 			}
-			else if (content.equalsIgnoreCase("true"))
+			else if(content.contains("sdf") || content.contains("cvb"))
+			{
+				isLegitimate = false;
+			}
+			else if (content.equalsIgnoreCase(""))
+			{
+				isLegitimate = false;
+			}
+			else if (content.length() <= 1)
 			{
 				isLegitimate = false;
 			}
@@ -134,11 +146,19 @@ public class Chatbot
 			{
 				isValid = false;
 			}
-		else if(input.contains("sdf") || input.contains("cvb"))
-		{
-			isValid = false;
-		}
+			else if(input.contains("sdf") || input.contains("cvb"))
+			{
+				isValid = false;
+			}
+			else
+			{
+				isValid = true;
+			}
 			return isValid;
+	}
+	public String getCUrrentuser()
+	{
+		return currentUser;
 	}
 	public ArrayList<String> getResponseList()
 	{

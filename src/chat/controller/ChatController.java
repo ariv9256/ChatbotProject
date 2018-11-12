@@ -28,7 +28,7 @@ public class ChatController
 	public void start()
 	{
 		String userInput = "";
-		while(!userInput.equalsIgnoreCase("quit"))
+		while(!userInput.equalsIgnoreCase("quit")) 
 		{
 			userInput = interactWithChatbot(userInput);
 			//"quit" option in Chatbot from userInput
