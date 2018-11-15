@@ -12,10 +12,16 @@ public class Chatbot
 	
 	public Chatbot()
 	{
-		//Default Constructor
+		this.content = new String("default content");
+		this.currentUser = new String("default user");
+		this.joke = new String (" ");
+		
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		buildLists();
 	}
-	public Chatbot(ArrayList<Chatbot> responseList, 
-			ArrayList<Chatbot> spookyList, String content, String currentUser, String joke)
+	public Chatbot(ArrayList<String> responseList, 
+			ArrayList<String> spookyList, String content, String currentUser, String joke)
 	{
 		this.responseList = getResponseList();
 		this.spookyList = getSpookyList();
@@ -125,9 +131,9 @@ public class Chatbot
 			{
 				isLegitimate = false;
 			}
-			else if (content.length() <= 1)
+			else if(content.length() >= 1)
 			{
-				isLegitimate = false;
+				isLegitimate = true;
 			}
 			else
 			{
@@ -137,17 +143,17 @@ public class Chatbot
 		}
 		public Boolean contentChecker(String input)
 		{
-			Boolean isValid = true;
+			boolean isValid = true;
 		
 			if(input == null)
 			{
 				isValid = false;
 			}
-			else if(input.length() < 2)
+			else if(input.equals(content))
 			{
-				isValid = false;
+				isValid = true;
 			}
-			else if(input.contains("sdf") || input.contains("cvb"))
+			else if(input.contains(" " + content) || content.contains(content + " "))
 			{
 				isValid = false;
 			}
