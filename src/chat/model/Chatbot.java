@@ -141,19 +141,19 @@ public class Chatbot
 			}
 			return isLegitimate;
 		}
-		public Boolean contentChecker(String input)
+		public Boolean contentChecker(String content)
 		{
 			boolean isValid = true;
 		
-			if(input == null)
+			if(content == null)
 			{
 				isValid = false;
 			}
-			else if(input.equals(content))
+			else if(content.equals(content))
 			{
 				isValid = true;
 			}
-			else if(input.contains(" " + content) || content.contains(content + " "))
+			else if(content.contains(" " + content) || content.contains(content + " "))
 			{
 				isValid = false;
 			}
