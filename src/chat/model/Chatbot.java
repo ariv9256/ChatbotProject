@@ -153,7 +153,11 @@ public class Chatbot
 			{
 				isValid = true;
 			}
-			else if(content.contains(" " + content) || content.contains(content + " "))
+			else if(content.indexOf(content + " ") == 0)
+			{
+				isValid = false;
+			}
+			else if(content.indexOf(" " + content) == 0)
 			{
 				isValid = false;
 			}
