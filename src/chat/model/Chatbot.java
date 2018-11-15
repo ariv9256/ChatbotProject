@@ -153,11 +153,11 @@ public class Chatbot
 			{
 				isValid = true;
 			}
-			else if(content.indexOf(content + " ") == 0)
+			else if(content.startsWith(content + " "))
 			{
 				isValid = false;
 			}
-			else if(content.indexOf(" " + content) == 0)
+			else if(content.endsWith(" " + content))
 			{
 				isValid = false;
 			}
@@ -167,7 +167,7 @@ public class Chatbot
 			}
 			return isValid;
 	}
-	public String getCUrrentuser()
+	public String getCurrentuser()
 	{
 		return currentUser;
 	}
