@@ -5,14 +5,14 @@ import chat.controller.ChatController;
 
 public class ChatFrame extends JFrame
 {
-	private ChatController appController;
+	private ChatController app;
 	private ChatPanel appPanel;
 	
 	public ChatFrame()
 	{
 		super();
-		this.appController = appController;
-		this.appPanel = new ChatPanel(appController);
+		this.app = app;
+		this.appPanel = new ChatPanel(app);
 		
 		setupFrame();
 	}

@@ -20,26 +20,31 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatPane;
 	private SpringLayout appLayout;
 	
-	public ChatPanel(ChatController appController)
+	public ChatPanel(ChatController app)
 	{
 		super();
-		this.appController = appController;
+		this.appController = app;
 		
 		firstLabel = new JLabel("Hello :)");
-		chatButton = new JButton("Boop!");
-		checkerButton = new JButton("");
-		loadButton = new JButton("");
-		saveButton = new JButton("");
-		chatField = new JTextField("");
-		chatArea = new JTextArea("");
+		chatButton = new JButton("Chat");
+		checkerButton = new JButton("Check Text");
+		loadButton = new JButton("Load");
+		saveButton = new JButton("Save");
+		chatField = new JTextField("Talk to bot here", 50);
+		chatArea = new JTextArea("Chat Area", 20, 50);
 		chatPane = new JScrollPane();
 		appLayout = new SpringLayout();
 		
+		setupScrollPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
 	}
 	private void changeBackground()
+	{
+		
+	}
+	private void setupScrollPane()
 	{
 		
 	}
@@ -59,8 +64,6 @@ public class ChatPanel extends JPanel
 	{
 		appLayout.putConstraint(SpringLayout.EAST, firstLabel,  -350,  SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.NORTH, firstLabel,  100,  SpringLayout.NORTH, this);
-		appLayout.putConstraint(SpringLayout.WEST, firstButton,  350,  SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, firstButton, -135, SpringLayout.SOUTH, this);
 	}
 	private void setupListeners()
 	{
