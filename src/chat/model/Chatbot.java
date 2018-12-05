@@ -63,6 +63,7 @@ public class Chatbot
 		responseList.add("j");
 		
 		spookyList.add("Halloween");
+		spookyList.add("spooky");
 		spookyList.add("What is your favorite holiday(it should be obvious).");
 		spookyList.add("Jack Skellington is the bestest!");
 		spookyList.add("B O O");
@@ -85,7 +86,7 @@ public class Chatbot
 			
 			if(!legitimacyChecker(content))
 			{
-				answer += "You really should not send null\n";
+				answer += "You said: you really should not send null\n";
 			}
 			else 
 			{
@@ -101,11 +102,11 @@ public class Chatbot
 			
 			return answer;
 		}
-		public boolean spookyChecker(String input)//Checks spookiness 
+		public boolean spookyChecker(String content)//Checks spookiness 
 		{
 			boolean isSpooky = false;
 			//input = getContent();
-			setContent(input);
+			String specialContent = "";
 			
 			//Spooky for list checking contents of spookyList 
 			for (String spookyPhrase : getSpookyList())
@@ -114,7 +115,6 @@ public class Chatbot
 				if (content.contains(spookyPhrase))
 				{
 					isSpooky = true;
-					return isSpooky;
 				}
 			}
 			return isSpooky;
