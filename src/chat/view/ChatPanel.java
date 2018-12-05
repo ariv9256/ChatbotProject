@@ -46,7 +46,13 @@ public class ChatPanel extends JPanel
 	}
 	private void setupScrollPane()
 	{
+		chatArea.setEditable(false);
+		chatArea.setLineWrap(true);
+		chatArea.setWrapStyleWord(true);
 		
+		chatPane.setViewportView(chatArea);
+		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 	private void setupPanel()
 	{
