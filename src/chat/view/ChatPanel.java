@@ -20,10 +20,10 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatPane;
 	private SpringLayout appLayout;
 	
-	public ChatPanel(ChatController app)
+	public ChatPanel(ChatController appController)
 	{
 		super();
-		this.appController = app;
+		this.appController = appController;
 		appLayout = new SpringLayout();
 		
 		chatButton = new JButton("Chat");
@@ -97,7 +97,18 @@ public class ChatPanel extends JPanel
 	}
 	private void setupListeners()
 	{
-		
+		chatButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				String input = chatField.getText();
+				String output = "";
+				output = appController.interactWithChatbot(input);
+				chatArea.append(output);
+				chatField.setText("");
+				chatArea.setCaretPosition(chatArea.getDocument().getLength());
+			}
+		});
 	}
 	
 }

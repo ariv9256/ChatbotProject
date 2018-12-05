@@ -46,18 +46,18 @@ public class Chatbot
 	{
 		responseList.add("Hello there! How are you in this lovely evening?");
 		responseList.add("That is mean goodbye :( Leave me alone");
-		responseList.add("What is your name?");
+		responseList.add("Oh really now");
 		responseList.add("I can't do the understanding of that statement");
-		responseList.add("What are you doing?");
-		responseList.add("What do you like to do?");
-		responseList.add("k");
-		responseList.add("j");
-		responseList.add("j");
-		responseList.add("j");
-		responseList.add("j");
-		responseList.add("j");
-		responseList.add("j");
-		responseList.add("j");
+		responseList.add("What do you mean?");
+		responseList.add("Woah cool");
+		responseList.add("Okay!");
+		responseList.add("Now what?");
+		responseList.add("Haha");
+		responseList.add("That's strange..");
+		responseList.add("That's funny!");
+		responseList.add("*burp*");
+		responseList.add("Meep");
+		responseList.add("Hmm. Well..");
 		responseList.add("j");
 		responseList.add("j");
 		responseList.add("j");
@@ -79,20 +79,25 @@ public class Chatbot
 		spookyList.add("Are you an adult? Do you still dress up for Halloween?");
 		
 	}
-		public String processText(String userText) //Return userResponse method
+		public String processText(String content) //Return userResponse method
 		{
 			String answer = ""; 
 			
-			if(contentChecker(content) == true)
+			if(!legitimacyChecker(content))
 			{
-				setContent(content);
+				answer += "You really should not send null\n";
 			}
+			else 
+			{
+				answer += "You said: " +content+ "\n";
 			
-			getResponseList();
-			int randomIndex = 1;
-			randomIndex = (int) (Math.random() * responseList.size());
-			answer += "Chatbot says: " + responseList.get(randomIndex);
-			answer = "You said: " + content + ". /nChatbot says: " + responseList.get(randomIndex);
+				if(contentChecker(content))
+				{
+					answer += "You said the special words.\n";
+				}
+				int randomIndex = (int) (responseList.size() * Math.random());
+				answer += "Chatbot says: " +responseList.get(randomIndex) + "\n";
+			}
 			
 			return answer;
 		}

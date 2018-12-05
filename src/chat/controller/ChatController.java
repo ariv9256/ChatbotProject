@@ -17,23 +17,22 @@ public class ChatController
 		simpleBot = new Chatbot();
 		inputScanner = new Scanner(System.in);
 	}
-	public String interactWithChatbot(String text)
+	public String interactWithChatbot(String content)
 	{
 		String output = "";
-		String userResponse = JOptionPane.showInputDialog(null, "Hey bud, what's up?");
-		output = simpleBot.processText(userResponse);
+		output += simpleBot.processText(content);
 		return output;
 		//First output of Chatbot and allows interaction between chatbot and userResponse
 	}
 	public void start()
 	{
-		String userInput = "";
-		while(!userInput.equalsIgnoreCase("quit")) 
-		{
-			userInput = interactWithChatbot(userInput);
+		//String userInput = "";
+		//while(!userInput.equalsIgnoreCase("quit")) 
+		//{
+		//	userInput = interactWithChatbot(userInput);
 			//"quit" option in Chatbot from userInput
-		}
-		askUser();
+		//}
+		//askUser();
 		//made askUser() public
 	}
 	public Chatbot getChatbot()
@@ -43,11 +42,21 @@ public class ChatController
 	}
 	public String useChatbotCheckers(String content)
 	{
-		content = simpleBot.getContent();
-		simpleBot.spookyChecker(content);
-		//simpleBot checks arrayList content using userChatbotCheckers String method
+		String testedValues = "The following checkers passed:";
+		if(simpleBot.contentChecker(content))
+		{
+			testedValues += "\nContent Checker";
+		}
+		if(simpleBot.spookyChecker(content))
+		{
+			testedValues += "\nSpooky Checker Happy Halloween";
+		}
+		if(simpleBot.legitimacyChecker(content))
+		{
+			testedValues += "\nLegitimacy Checker";
+		}
 		
-		return content;
+		return testedValues;
 	}
 	public boolean validInt(String maybeInt) // Validity checker method
 	{
@@ -63,6 +72,10 @@ public class ChatController
 			JOptionPane.showMessageDialog(null, "You need to type in a number my spooky one :O");
 		}
 		return isValid;
+	}
+	private void close()
+	{
+		System.exit(0);
 	}
 	private void askUser() //End result of askUser in chatbot (not finished yet)
 	{
