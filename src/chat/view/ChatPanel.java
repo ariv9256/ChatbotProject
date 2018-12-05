@@ -11,7 +11,13 @@ public class ChatPanel extends JPanel
 	private ChatController appController;
 	private ChatPanel appPanel;
 	private JLabel firstLabel;
-	private JButton firstButton;
+	private JButton chatButton;
+	private JButton checkerButton;
+	private JButton loadButton;
+	private JButton saveButton;
+	private JTextField chatField;
+	private JTextArea chatArea;
+	private JScrollPane chatPane;
 	private SpringLayout appLayout;
 	
 	public ChatPanel(ChatController appController)
@@ -20,7 +26,13 @@ public class ChatPanel extends JPanel
 		this.appController = appController;
 		
 		firstLabel = new JLabel("Hello :)");
-		firstButton = new JButton("Boop!");
+		chatButton = new JButton("Boop!");
+		checkerButton = new JButton("");
+		loadButton = new JButton("");
+		saveButton = new JButton("");
+		chatField = new JTextField("");
+		chatArea = new JTextArea("");
+		chatPane = new JScrollPane();
 		appLayout = new SpringLayout();
 		
 		setupPanel();
@@ -34,7 +46,13 @@ public class ChatPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(appLayout);
-		this.add(firstButton);
+		this.add(chatButton);
+		this.add(checkerButton);
+		this.add(loadButton);
+		this.add(saveButton);
+		this.add(chatField);
+		this.add(chatArea);
+		this.add(chatPane);
 		this.add(firstLabel);
 	}
 	private void setupLayout()
