@@ -19,6 +19,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
 	private SpringLayout appLayout;
+	private JButton resetButton;
 	
 	public ChatPanel(ChatController appController)
 	{
@@ -31,6 +32,7 @@ public class ChatPanel extends JPanel
 		saveButton = new JButton("Save");
 		chatField = new JTextField("Talk to bot here", 50);
 		checkerButton = new JButton("Check Text");
+		resetButton = new JButton("Reset");
 		
 		setupScrollPane();
 		setupPanel();
@@ -62,6 +64,7 @@ public class ChatPanel extends JPanel
 		this.add(saveButton);
 		this.add(chatField);
 		this.add(chatPane);
+		this.add(resetButton);
 		
 	}
 	private void setupLayout()
