@@ -3,6 +3,7 @@ package chat.controller;
 import java.util.Scanner;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import chat.view.ChatFrame;
 
 import chat.model.Chatbot;
 
@@ -10,12 +11,14 @@ public class ChatController
 { 
 	private Scanner inputScanner;
 	private Chatbot simpleBot;
+	private ChatFrame chatApp;
 	
 
 	public ChatController()
 	{
 		simpleBot = new Chatbot();
 		inputScanner = new Scanner(System.in);
+		chatApp
 	}
 	public String interactWithChatbot(String content)
 	{
