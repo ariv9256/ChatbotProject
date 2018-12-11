@@ -81,6 +81,14 @@ public class ChatController
 	{
 		System.exit(0);
 	}
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
+	public ChatFrame getAppFrame()
+	{
+		return appFrame;
+	}
 	private void askUser() //End result of askUser in chatbot (not finished yet)
 	{
 		
