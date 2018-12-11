@@ -32,7 +32,11 @@ public class IOController
 		}
 		catch(IOException error)
 		{
-			
+			appController.handleErrors(error);
+		}
+		catch(Exception genericError)
+		{
+			appController.handleErrors(genericError);
 		}
 	}
 }
