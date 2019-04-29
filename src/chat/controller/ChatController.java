@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import chat.view.ChatFrame;
 import chat.view.ChatPanel;
+import chat.model.ChatTwitter;
 
 import chat.model.Chatbot;
 
@@ -13,11 +14,13 @@ public class ChatController
 	private Scanner inputScanner;
 	private Chatbot simpleBot;
 	private ChatFrame appFrame;
+	private ChatTwitter myTwitter;
 	
 
 	public ChatController()
 	{
 		simpleBot = new Chatbot();
+		myTwitter = new ChatTwitter(this);
 		//inputScanner = new Scanner(System.in);
 		appFrame = new ChatFrame(this);
 	}
@@ -94,5 +97,9 @@ public class ChatController
 		
 		//String response = JOptionPane.showInputDialog(null, "What is your favorite holiday?");
 		
+	}
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
 	}
 }

@@ -29,6 +29,7 @@ public class ChatTwitter
 	private long totalWordCount;
 	private HashMap<String, Integer> wordsAndCount;
 	
+	
 	public ChatTwitter(ChatController app)
 	{
 		this.app = app;
@@ -42,7 +43,7 @@ public class ChatTwitter
 	{
 		try
 		{
-			chatTwitter.updateStatus(textToTweet + "@ChatbotCTEC");
+			chatTwitter.updateStatus(textToTweet + "@CodyHenrichsen, @CTECNow, @ChatbotCTEC");
 		}
 		catch(TwitterException tweetError)
 		{
