@@ -53,12 +53,13 @@ public class ChatPanel extends JPanel
 		searchTwitterButton = new JButton("Search Twitter", searchIcon);
 		buttonPanel = new JPanel(new GridLayout(1,0));
 		
+		
 		saveIcon = new ImageIcon(getClass().getResource("/chat/view/images/save.png"));
 		loadIcon = new ImageIcon(getClass().getResource("/chat/view/images/load.png"));
 		chatIcon = new ImageIcon(getClass().getResource("/chat/view/images/chat.png"));
 		checkerIcon = new ImageIcon(getClass().getResource("/chat/view/images/check.png"));
 		tweetIcon = new ImageIcon(getClass().getResource("/chat/view/images/tweet.png"));
-		searchIcon = new ImageIcon(getClass().getResource("/chat/view/images/searchTwitter.png"));
+		searchIcon = new ImageIcon(getClass().getResource("/chat/view/images/search.png"));
 
 		
 		setupScrollPane();
@@ -80,6 +81,7 @@ public class ChatPanel extends JPanel
 		buttonPanel.add(checkerButton);
 		buttonPanel.add(tweetButton);
 		buttonPanel.add(searchTwitterButton);
+		buttonPanel.add(resetButton);
 	}
 	private void setupScrollPane()
 	{
@@ -100,7 +102,6 @@ public class ChatPanel extends JPanel
 		this.add(buttonPanel);
 		this.add(chatField);
 		this.add(chatPane);
-		this.add(resetButton);
 		buttonPanel.setPreferredSize(new Dimension(900, 150));
 		buttonPanel.setBackground(Color.CYAN);
 		
@@ -114,6 +115,8 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, chatField, 30, SpringLayout.SOUTH, chatPane);
 		appLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatPane);
 		appLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, chatPane);	
+		appLayout.putConstraint(SpringLayout.NORTH, buttonPanel, 59, SpringLayout.SOUTH, chatField);
+		appLayout.putConstraint(SpringLayout.EAST, buttonPanel, -59, SpringLayout.EAST, this);
 	}
 	private String getPath(String choice)
 	{
@@ -161,6 +164,14 @@ public class ChatPanel extends JPanel
 				String path = ".";
 				IOController.saveText(appController, path, chatText);
 				chatArea.setText("Chat saved!");
+			}
+		});
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent tweetClick)
+			{
+				String textToTweet = chatField.getText().trim();
+				appController.tweet(textToTweet);
 			}
 		});
 	}
