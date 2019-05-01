@@ -102,4 +102,9 @@ public class ChatController
 	{
 		myTwitter.sendTweet(text);
 	}
+	public String findWords(String user)
+	{
+		String results = myTwitter.getMostCommonWord(user);
+		return results;
+	}
 }
